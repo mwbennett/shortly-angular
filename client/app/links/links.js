@@ -12,16 +12,5 @@ angular.module('shortly.links', [])
         console.log(error);
       });
   };
-  $scope.postLink = function(){
-    var link = { url : $scope.linkURL }; //grab the URL
-    Links.postLink(link)
-      .then(function(shortURL) {
-        console.log("shortURL: ", shortURL);
-        $scope.data.links.push(shortURL);
-      })
-      .catch(function(error) {
-        console.log(error);
-      })
-  }
   $scope.getLinks();
 });

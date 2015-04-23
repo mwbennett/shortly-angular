@@ -15,7 +15,7 @@ angular.module('shortly.services', [])
     });
   };
 
-  var postLink = function(urlSite) {
+  var addLink = function(urlSite) {
     return $http({
       method: 'POST',
       url: '/api/links',
@@ -28,7 +28,7 @@ angular.module('shortly.services', [])
 
   return {
     getLinks : getLinks,
-    postLink: postLink
+    addLink: addLink
   }
 })
 .factory('Auth', function ($http, $location, $window) {
