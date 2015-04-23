@@ -8,6 +8,8 @@ angular.module('shortly.shorten', [])
       .then(function(shortURL) {
         console.log("shortURL: ", shortURL);
         $scope.data.links.push(shortURL);
+      }).then(function(){
+        $location.path('/links');
       })
       .catch(function(error) {
         console.log(error);

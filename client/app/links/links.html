@@ -1,6 +1,17 @@
 <div id='container' ng-controller='LinksController'>
-
-  <div ng-repeat='link in data.links'>
-    <span> {{ link.base_url }}/{{link.code}} </span>
+  <ul>
+    <li> <a href='/#/links'>All Links</a></li>
+    <li> <a href='/#/shorten'>Shorten</a></li>
+  </ul>
+  <button ng-click='signOut()'>Signout</button>
+  <div ng-repeat='link in data.links | filter:count'>
+    <!-- can't increase count here; must actually link to URL -->
+      <span> {{ link.title }} </span>
+      <br>
+      <span> {{ link.visits }} visits</span>
+      <br>
+      <a href='http://localhost:3000/api/links/{{link.code}}' ng-click='link.visits = link.visits + 1'> {{link.base_url}}/{{link.code}} </a>
+      <hr color='lightgrey'>
+    </div>
   </div>
 </div>
