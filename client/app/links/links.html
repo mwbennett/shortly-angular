@@ -4,7 +4,8 @@
     <li> <a href='/#/shorten'>Shorten</a></li>
   </ul>
   <button ng-click='signOut()'>Signout</button>
-  <div ng-repeat='link in data.links | filter:count'>
+  <label>Search: <input ng-model="searchText" placeholder='Filter Results'></label>
+  <div ng-repeat='link in data.links | orderBy : "-visits" | filter:searchText'>
     <!-- can't increase count here; must actually link to URL -->
       <span> {{ link.title }} </span>
       <br>
