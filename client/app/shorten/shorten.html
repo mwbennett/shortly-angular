@@ -1,22 +1,25 @@
 <div id='container' ng-controller='ShortenController'>
-  <ul>
+  <ul class='nav nav-tabs'>
     <li> <a href='/#/links'>All Links</a></li>
     <li> <a href='/#/shorten'>Shorten</a></li>
+    <li ng-click='signOut()'><a href="#">Signout</a></li>
   </ul>
-  <button ng-click='signOut()'>Signout</button>
+  <br>
 <!-- Your code here -->
-  <form name='myForm' ng-submit='addLink()' novalidate>
-    <input ng-model='link' name='input' type='url' placeholder='Enter URL here' required>
-    <input type='submit' value='submit'>
-
-    <div role="alert">
-      <span class="error" ng-show="myForm.input.$error.required && myForm.input.$dirty">
-        Required!</span>
-      <span class="error" ng-show="myForm.input.$error.url && myForm.input.$dirty">
-        Not valid url!</span>
-    </div>
-  </form>
-
+  <div class='col-xs-12 col-sm-6 col-md-8 col-md-offset-1'>
+    <form name='myForm' ng-submit='addLink()' novalidate>
+      <div class='form-group'>
+      <input ng-model='link' name='input' type='url' placeholder='Enter URL here' required>
+      <input type='submit' value='submit'>
+      </div>
+      <div role="alert">
+        <span class="error" ng-show="myForm.input.$error.required && myForm.input.$dirty">
+          Required!</span>
+        <span class="error" ng-show="myForm.input.$error.url && myForm.input.$dirty">
+          Not valid url!</span>
+      </div>
+    </form>
+  </div>
 </div>
 
 

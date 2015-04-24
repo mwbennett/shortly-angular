@@ -1,18 +1,20 @@
 body {
+  padding: 0;
   margin: 0;
-  margin-top: 10px;
   font-family: arial, sans-serif;
+  font-size: 16px;
 }
 
-a {
-  color: #333;
-  font-size: 14px;
-  text-decoration: none;
+.title {
+  font-size: 20px;
 }
 
 h1 {
   font-style: italic;
-  margin-bottom: 10px;
+  padding-top: 20px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
 }
 
 .navigation {
@@ -61,7 +63,7 @@ h1 {
 }
 
 .link:hover {
-  background-color: #efe;
+  background-color: #a9a;
 }
 
 .link img {
@@ -145,4 +147,5 @@ input[type=url]:focus {
 .creator .message {
   clear: both;
 }
+
 

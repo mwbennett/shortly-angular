@@ -1,18 +1,21 @@
 <div id='container' ng-controller='LinksController'>
-  <ul>
+  <ul class='nav nav-tabs'>
     <li> <a href='/#/links'>All Links</a></li>
     <li> <a href='/#/shorten'>Shorten</a></li>
+    <li ng-click='signOut()'><a href="#">Signout</a></li>
   </ul>
-  <button ng-click='signOut()'>Signout</button>
-  <label>Search: <input ng-model="searchText" placeholder='Filter Results'></label>
-  <div ng-repeat='link in data.links | orderBy : "-visits" | filter:searchText'>
-    <!-- can't increase count here; must actually link to URL -->
-      <span> {{ link.title }} </span>
-      <br>
-      <span> {{ link.visits }} visits</span>
-      <br>
-      <a href='http://localhost:3000/api/links/{{link.code}}' ng-click='link.visits = link.visits + 1'> {{link.base_url}}/{{link.code}} </a>
-      <hr color='lightgrey'>
+  <br>
+
+  <div class='col-xs-12 col-sm-6 col-md-8 col-md-offset-1'>
+    <label>Search: <input ng-model="searchText" placeholder='Filter Results'></label>
+    <div ng-repeat='link in data.links | orderBy : "-visits" | filter:searchText'>
+      <!-- can't increase count here; must actually link to URL -->
+        <span class='title'> {{ link.title }} </span>
+        <br>
+        <span> {{ link.visits }} visits</span>
+        <br>
+        <a href='http://localhost:3000/api/links/{{link.code}}' ng-click='link.visits = link.visits + 1'> {{link.base_url}}/{{link.code}} </a>
+        <hr color='lightgrey'>
     </div>
   </div>
 </div>
